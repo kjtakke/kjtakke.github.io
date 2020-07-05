@@ -1,2 +1,2 @@
 # myScripts.io
-My Site Scripts
+https://kjtakke.github.io/index.html
