@@ -11,7 +11,7 @@ webDevObjects = [
 		charts : 
 		[
 			["r2-c1", "My Title",1,2,"pie","","",true,"chart1-1",400,"25%"], //Chart Details		webDevObjects[0].charts[0][3] = "pie"
-			["r3-c2" "My Title",1,2,"pie","","",true,"chart1-1",400,"25%"], //Chart Details
+			["r3-c2", "My Title",1,2,"pie","","",true,"chart1-1",400,"25%"], //Chart Details
 		],
 		  
 		measures :
