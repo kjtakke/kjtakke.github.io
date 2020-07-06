@@ -40,7 +40,7 @@ webDevObjects = [
 		tables :
 		[
 			["r3-c1",								//webDevObjects[0].tables[0][0] = "r11-c0"
-					["table table-hover", "yes", 49.8, "padding:10px"],		//webDevObjects[0].tables[0][1][0] = "table table-dark-hover"										
+					["table table-hover", "yes", 49.8, "padding:10px", "item "],		//webDevObjects[0].tables[0][1][0] = "table table-dark-hover"										
 				
 					["Name","Age","Gender","DoB"], 	//Table Header 			webDevObjects[0].tables[0][2][0] = "Name"
 					["Kris","36","M","12/3/1990"],	//Table body Row 1		webDevObjects[0].tables[0][3][2] = "M"
@@ -48,7 +48,7 @@ webDevObjects = [
 					["Jane","32","F","3/10/200"],		//Table body Row 3
 			],
 			["r3-c2",								//webDevObjects[0].tables[1][0] = "r11-c1"
-					["table table-dark table-hover", "no", 49.8,  "padding:10px"], //webDevObjects[0].tables[1][1][1] = "no"												
+					["table table-dark table-hover", "no", 49.8,  "padding:10px", "item "], //webDevObjects[0].tables[1][1][1] = "no"												
 				
 					["Name","Age","Gender","DoB"], 	//Table Header 			webDevObjects[0].tables[1][2][0] = "Name"
 					["Kris","36","M","12/3/1990"],	//Table body Row 1		webDevObjects[0].tables[1][3][0] = "Kris"
