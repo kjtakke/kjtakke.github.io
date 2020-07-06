@@ -1,12 +1,7 @@
 //#################################################################################################
-//VARIABLES
 var ary
 var unique
 var x
-
-
-//#################################################################################################
-
 //#################################################################################################
 //FUNCTIONS
 /*
@@ -27,6 +22,79 @@ function uniqueArray(dt,dim){
 }
 */
 
+function screenWidthPercent(p){
+	return screen.width / 100 * p
+}
+//#################################################################################################
+function createInnerTable(k,i){
+	var rc = ""
+	//Does the table have headers
+	if (i == 2) {
+		//First Row
+		if (webDevObjects[0].tables[k][1][1] == "yes") {
+		
+			//Table Headers
+			for (j = 0; j < webDevObjects[0].tables[k][2].length; j++){
+				rc += `
+					<th> ${webDevObjects[0].tables[k][2][j]}</th>
+				`
+			};
+		} else {
+	
+			//Table Body
+			for (j = 0; j < webDevObjects[0].tables[k][2].length; j++){
+				
+				rc += `
+					<td>${webDevObjects[0].tables[k][i][j]}</td>
+				`
+			};
+		};
+	} else { 
+	//Not First Row
+		for (j = 0; j < webDevObjects[0].tables[k][2].length; j++){
+				rc += `
+					<td>${webDevObjects[0].tables[k][i][j]}</td>
+				`
+			};
+	}
+
+	return rc
+}
+function createTableRow(k){
+	//Create Rows
+	var rw = ""
+	for (i = 2; i < webDevObjects[0].tables[k].length; i++){
+		rw += `
+			<tr>
+				${createInnerTable(k,i)}
+			</tr>	
+		`
+	};
+	return rw
+}
+function createTable(k){
+	//Create Table
+	tableWidth = screenWidthPercent(webDevObjects[0].tables[k][1][2])
+	tableStyles = screenWidthPercent(webDevObjects[0].tables[k][1][3])
+	txt = `
+	<div style='width:${tableWidth}px;padding:5px; ${tableStyles}'>
+		<table class='${webDevObjects[0].tables[k][1][0]}' align='center'> 
+			${createTableRow(k)}
+		</table>	
+	</div>
+	`
+	x = document.getElementById(webDevObjects[0].tables[k][0])
+	x.innerHTML += txt
+	//document.getElementById("main").innerHTML = txt
+}
+
+function selectTables(){
+	//Select Table
+	for (k = 0; k < webDevObjects[0].tables.length; k++){
+		createTable(k)
+	};
+}
+//#################################################################################################
 function navBarLinks(i){
 	let txt = ""
 	i = i + 1
@@ -37,7 +105,6 @@ function navBarLinks(i){
 	}
 	return txt
 }
-
 function navBarDropdown(){
 	let txt = ""
 	for (i = 0; i < webDevObjects[0].navBar[0][0].length; i++){
@@ -53,9 +120,6 @@ function navBarDropdown(){
 	}
 	return txt
 }
-
-
-
 function navBar(){
 	
 	return `
@@ -70,8 +134,7 @@ function navBar(){
 			</nav>
 		`
 }
-
-
+//#################################################################################################
 function innerMasterTable(i) {
 	let txt = ""
 	for (j = 0; j < 20; j++){
@@ -81,12 +144,11 @@ function innerMasterTable(i) {
 	}
 	return txt
 }
-
 function createMasterTable(){
 	let txt = ""
 		for (i = 0; i < 50; i++){
 			txt +=  `
-		<table style="width:100%" id="r${i}">
+		<table style="width:100%" id="r${i}" align='center'>
 					<tr>
 						${innerMasterTable(i)}
 					</tr>
@@ -95,29 +157,13 @@ function createMasterTable(){
 		}
   return txt
 }
-
 //#################################################################################################
-
+function main() {
+		x = document.getElementById("main")
+		x.innerHTML += navBar()
+		x.innerHTML += "<br><br>"
+		x.innerHTML += createMasterTable()
+		selectTables()
+	}
 //#################################################################################################
-//HTML
-
-
-
-//#################################################################################################
-
-//#################################################################################################
-
-x = document.getElementById("main")
-x.innerHTML += navBar()
-x.innerHTML += createMasterTable()
-
-
-
-//#################################################################################################
-
-//#################################################################################################
-//EVENTS
-
-
-
-//#################################################################################################
+$(document).ready(main());
