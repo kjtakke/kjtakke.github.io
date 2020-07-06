@@ -75,9 +75,10 @@ function createTableRow(k){
 function createTable(k){
 	//Create Table
 	tableWidth = screenWidthPercent(webDevObjects[0].tables[k][1][2])
-	tableStyles = screenWidthPercent(webDevObjects[0].tables[k][1][3])
+	tableStyles = (webDevObjects[0].tables[k][1][3])
+	DivClass = (webDevObjects[0].tables[k][1][4])
 	txt = `
-	<div style='width:${tableWidth}px;padding:5px; ${tableStyles}'>
+	<div style='width:${tableWidth}px;padding:5px; ${tableStyles}' class='${DivClass}'>
 		<table class='${webDevObjects[0].tables[k][1][0]}' align='center'> 
 			${createTableRow(k)}
 		</table>	
