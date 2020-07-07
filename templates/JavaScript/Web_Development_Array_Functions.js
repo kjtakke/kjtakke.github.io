@@ -2,6 +2,10 @@
 var ary
 var unique
 var x
+var z = Array[5]
+var v
+var cartDatapointsArray 
+var DataPointsArray = new Array()
 //#################################################################################################
 //FUNCTIONS
 /*
@@ -26,6 +30,152 @@ function screenWidthPercent(p){
 	return screen.width / 100 * p
 }
 //#################################################################################################
+/*
+	webDevObjects[0].charts[i][5].length
+*/
+
+
+
+
+function datapointsArray(i){
+		
+return [chartBarDatasets2(i),chartBarDatasets3(i),chartBarDatasets4(i),chartBarDatasets5(i)]
+}
+
+
+function addChartBar(i){
+	x = document.getElementById(webDevObjects[0].charts[i][0])
+	CID = `Chart${[i]}`
+	x.innerHTML = `
+	<div align='center'>
+		<div style='width:${screenWidthPercent(webDevObjects[0].charts[i][3])}px; height:${webDevObjects[0].charts[i][4]};'>
+			<canvas id='${CID}' width='width:${screenWidthPercent(webDevObjects[0].charts[i][3])}px' height='${webDevObjects[0].charts[i][4]}px'></canvas>
+		</div>
+	</div>
+	`
+	var ctx = document.getElementById(CID).getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: webDevObjects[0].charts[i][2],
+		options: {
+			legend: {
+				display: true,
+			},
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero: true,
+					},
+				}]
+			},
+		},
+		data: {
+			
+			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+			datasets: [{
+				label: webDevObjects[0].charts[i][6][0],
+				data: webDevObjects[0].charts[i][5][0],
+				backgroundColor: webDevObjects[0].charts[i][7][0],
+				borderColor: webDevObjects[0].charts[i][8][0],
+				borderWidth: 1,
+				order: 1,
+			},
+			
+				DataPointsArray[1],
+			],
+			labels: webDevObjects[0].charts[0][9],
+		},
+		
+			
+		
+		
+	});
+}
+
+//	beginAtZero: true,
+function addChartPie(i){
+	x = document.getElementById(webDevObjects[0].charts[i][0])
+	CID = `Chart${[i]}`
+	x.innerHTML = `
+	<div align='center'>
+		<div style='width:${screenWidthPercent(webDevObjects[0].charts[i][3])}px; height:${webDevObjects[0].charts[i][4]};'>
+			<canvas id='${CID}' width='width:${screenWidthPercent(webDevObjects[0].charts[i][3])}px' height='${webDevObjects[0].charts[i][4]}px'></canvas>
+		</div>
+	</div>
+	`
+	var ctx = document.getElementById(CID).getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: webDevObjects[0].charts[i][2],
+		data: {
+			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+			datasets: [{
+				label: webDevObjects[0].charts[i][6][0],
+				data: webDevObjects[0].charts[i][5][0],
+				backgroundColor: webDevObjects[0].charts[i][7][0],
+				borderColor: webDevObjects[0].charts[i][8][0],
+				borderWidth: 1,
+				order: 1,
+			},
+				
+			],
+			labels: webDevObjects[0].charts[0][9]
+		},
+		
+	});
+}
+function chartBarDataset(i,j){
+
+	try {
+		z = [{
+			label: webDevObjects[0].charts[i][6][i],
+			data: webDevObjects[0].charts[i][5][i],
+			backgroundColor: webDevObjects[0].charts[i][7][i],
+			borderColor: webDevObjects[0].charts[i][8][i],
+			borderWidth: 1,
+			order: 1,
+		
+		}]
+		
+		return z
+	}
+	catch(err) {}
+} 
+function addCharts(){
+	for (i = 0; i < webDevObjects[0].charts.length; i++){
+		
+		
+		for (j = 1; j < webDevObjects[0].charts[i][5].length; j++){
+			chartBarDataset(i,j)//Done for Data Points, Now need to do for -label,data,backgroundColor,borderColor
+			//Best to create a multidimensional array
+			DataPointsArray[j-1] = z[0].data
+		}
+		
+		
+		
+		if(webDevObjects[0].charts[i][2] == 'pie'){addChartPie(i)}
+		if(webDevObjects[0].charts[i][2] == 'bar'){addChartBar(i)}
+
+	}
+
+}
+
+
+function addMeasure() {
+	for (i = 0;i < webDevObjects[0].measures.length ;i++){
+		x = document.getElementById(webDevObjects[0].measures[i][0])
+		x.innerHTML += `
+		<div align='center'>
+			<button type='button' class='btn ${webDevObjects[0].measures[i][1]}' style='${webDevObjects[0].measures[i][3]}</span>${webDevObjects[0].measures[i][6]} ; width:${webDevObjects[0].measures[i][5]}px;margin:5px ;'>
+				${webDevObjects[0].measures[i][2]} <span class='badge badge-light'>${webDevObjects[0].measures[i][3]}</span>${webDevObjects[0].measures[i][4]}
+			</button>
+		</div>
+		
+		`
+		//<div class="container-fluid" align="center" style='width:${screenWidthPercent(webDevObjects[0].measures[i][5])}'>
+		//</div>
+	}
+}
+
+
 function createInnerTable(k,i){
 	var rc = ""
 	//Does the table have headers
@@ -165,6 +315,8 @@ function main() {
 		x.innerHTML += "<br><br>"
 		x.innerHTML += createMasterTable()
 		selectTables()
+		addMeasure()
+		addCharts()
 	}
 //#################################################################################################
 $(document).ready(main());
