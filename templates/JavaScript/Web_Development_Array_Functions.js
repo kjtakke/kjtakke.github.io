@@ -4,7 +4,7 @@ var unique
 var x
 var z = Array[5]
 var v
-var cartDatapointsArray 
+var cartDatapointsArray
 var DataPointsArray = new Array()
 //#################################################################################################
 //FUNCTIONS
@@ -37,126 +37,122 @@ function screenWidthPercent(p){
 
 
 
-function datapointsArray(i){
-		
-return [chartBarDatasets2(i),chartBarDatasets3(i),chartBarDatasets4(i),chartBarDatasets5(i)]
-}
 
-
-function addChartBar(i){
-	x = document.getElementById(webDevObjects[0].charts[i][0])
-	CID = `Chart${[i]}`
-	x.innerHTML = `
-	<div align='center'>
-		<div style='width:${screenWidthPercent(webDevObjects[0].charts[i][3])}px; height:${webDevObjects[0].charts[i][4]};'>
-			<canvas id='${CID}' width='width:${screenWidthPercent(webDevObjects[0].charts[i][3])}px' height='${webDevObjects[0].charts[i][4]}px'></canvas>
-		</div>
-	</div>
-	`
-	var ctx = document.getElementById(CID).getContext('2d');
-	var myChart = new Chart(ctx, {
-		type: webDevObjects[0].charts[i][2],
-		options: {
-			legend: {
-				display: true,
-			},
-			scales: {
-				yAxes: [{
-					ticks: {
-						beginAtZero: true,
-					},
-				}]
-			},
-		},
-		data: {
-			
-			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-			datasets: [{
-				label: webDevObjects[0].charts[i][6][0],
-				data: webDevObjects[0].charts[i][5][0],
-				backgroundColor: webDevObjects[0].charts[i][7][0],
-				borderColor: webDevObjects[0].charts[i][8][0],
-				borderWidth: 1,
-				order: 1,
-			},
-			
-				DataPointsArray[1],
-			],
-			labels: webDevObjects[0].charts[0][9],
-		},
-		
-			
-		
-		
-	});
-}
-
-//	beginAtZero: true,
-function addChartPie(i){
-	x = document.getElementById(webDevObjects[0].charts[i][0])
-	CID = `Chart${[i]}`
-	x.innerHTML = `
-	<div align='center'>
-		<div style='width:${screenWidthPercent(webDevObjects[0].charts[i][3])}px; height:${webDevObjects[0].charts[i][4]};'>
-			<canvas id='${CID}' width='width:${screenWidthPercent(webDevObjects[0].charts[i][3])}px' height='${webDevObjects[0].charts[i][4]}px'></canvas>
-		</div>
-	</div>
-	`
-	var ctx = document.getElementById(CID).getContext('2d');
-	var myChart = new Chart(ctx, {
-		type: webDevObjects[0].charts[i][2],
-		data: {
-			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-			datasets: [{
-				label: webDevObjects[0].charts[i][6][0],
-				data: webDevObjects[0].charts[i][5][0],
-				backgroundColor: webDevObjects[0].charts[i][7][0],
-				borderColor: webDevObjects[0].charts[i][8][0],
-				borderWidth: 1,
-				order: 1,
-			},
-				
-			],
-			labels: webDevObjects[0].charts[0][9]
-		},
-		
-	});
-}
 function chartBarDataset(i,j){
-
 	try {
 		z = [{
-			label: webDevObjects[0].charts[i][6][i],
-			data: webDevObjects[0].charts[i][5][i],
-			backgroundColor: webDevObjects[0].charts[i][7][i],
-			borderColor: webDevObjects[0].charts[i][8][i],
+			label: webDevObjects[0].charts[i][6][j],
+			data: webDevObjects[0].charts[i][5][j],
+			backgroundColor: webDevObjects[0].charts[i][7][j],
+			borderColor: webDevObjects[0].charts[i][8][j],
 			borderWidth: 1,
-			order: 1,
-		
+			fill: false,
+			order: j,
+
+
 		}]
-		
+
 		return z
 	}
 	catch(err) {}
-} 
+}
+
+function DP(k) {
+return [{	label:DataPointsArray[k-1].label,
+					data: DataPointsArray[k-1].data,
+					backgroundColor: DataPointsArray[k-1].backgroundColor,
+					borderColor: DataPointsArray[k-1].borderColor,
+					borderWidth: 1,
+					order: k,
+				}]
+}
+
 function addCharts(){
 	for (i = 0; i < webDevObjects[0].charts.length; i++){
-		
-		
+
+
 		for (j = 1; j < webDevObjects[0].charts[i][5].length; j++){
-			chartBarDataset(i,j)//Done for Data Points, Now need to do for -label,data,backgroundColor,borderColor
-			//Best to create a multidimensional array
-			DataPointsArray[j-1] = z[0].data
+			chartBarDataset(i,j)
+			DataPointsArray[j-1] = z[0]
 		}
-		
-		
-		
+
 		if(webDevObjects[0].charts[i][2] == 'pie'){addChartPie(i)}
-		if(webDevObjects[0].charts[i][2] == 'bar'){addChartBar(i)}
 
+		//webDevObjects[0].charts[1][11]
+		if(webDevObjects[0].charts[i][2] == 'bar'  && webDevObjects[0].charts[i][11] == false){
+			if (DataPointsArray.length == 0) {addChartBar1(i)}
+			if (DataPointsArray.length == 1) {addChartBar2(i)}
+			if (DataPointsArray.length == 2) {addChartBar3(i)}
+			if (DataPointsArray.length == 3) {addChartBar4(i)}
+			if (DataPointsArray.length == 4) {addChartBar5(i)}
+			if (DataPointsArray.length == 5) {addChartBar6(i)}
+			if (DataPointsArray.length == 6) {addChartBar7(i)}
+			if (DataPointsArray.length == 7) {addChartBar8(i)}
+			if (DataPointsArray.length == 8) {addChartBar9(i)}
+			if (DataPointsArray.length == 9) {addChartBar10(i)}
+		}
+
+		if(webDevObjects[0].charts[i][2] == 'horizontalBar'  && webDevObjects[0].charts[i][11] == false){
+			if (DataPointsArray.length == 0) {addChartHorizontalBar1(i)}
+			if (DataPointsArray.length == 1) {addChartHorizontalBar2(i)}
+			if (DataPointsArray.length == 2) {addChartHorizontalBar3(i)}
+			if (DataPointsArray.length == 3) {addChartHorizontalBar4(i)}
+			if (DataPointsArray.length == 4) {addChartHorizontalBar5(i)}
+			if (DataPointsArray.length == 5) {addChartHorizontalBar6(i)}
+			if (DataPointsArray.length == 6) {addChartHorizontalBar7(i)}
+			if (DataPointsArray.length == 7) {addChartHorizontalBar8(i)}
+			if (DataPointsArray.length == 8) {addChartHorizontalBar9(i)}
+			if (DataPointsArray.length == 9) {addChartHorizontalBar10(i)}
+		}
+
+		if(webDevObjects[0].charts[i][2] == 'bar'  && webDevObjects[0].charts[i][11] == true){
+			if (DataPointsArray.length == 0) {addChartBarStacked1(i)}
+			if (DataPointsArray.length == 1) {addChartBarStacked2(i)}
+			if (DataPointsArray.length == 2) {addChartBarStacked3(i)}
+			if (DataPointsArray.length == 3) {addChartBarStacked4(i)}
+			if (DataPointsArray.length == 4) {addChartBarStacked5(i)}
+			if (DataPointsArray.length == 5) {addChartBarStacked6(i)}
+			if (DataPointsArray.length == 6) {addChartBarStacked7(i)}
+			if (DataPointsArray.length == 7) {addChartBarStacked8(i)}
+			if (DataPointsArray.length == 8) {addChartBarStacked9(i)}
+			if (DataPointsArray.length == 9) {addChartBarStacked10(i)}
+		}
+
+		if(webDevObjects[0].charts[i][2] == 'horizontalBar'  && webDevObjects[0].charts[i][11] == true){
+			if (DataPointsArray.length == 0) {addChartHorizontalBarStacked1(i)}
+			if (DataPointsArray.length == 1) {addChartHorizontalBarStacked2(i)}
+			if (DataPointsArray.length == 2) {addChartHorizontalBarStacked3(i)}
+			if (DataPointsArray.length == 3) {addChartHorizontalBarStacked4(i)}
+			if (DataPointsArray.length == 4) {addChartHorizontalBarStacked5(i)}
+			if (DataPointsArray.length == 5) {addChartHorizontalBarStacked6(i)}
+			if (DataPointsArray.length == 6) {addChartHorizontalBarStacked7(i)}
+			if (DataPointsArray.length == 7) {addChartHorizontalBarStacked8(i)}
+			if (DataPointsArray.length == 8) {addChartHorizontalBarStacked9(i)}
+			if (DataPointsArray.length == 9) {addChartHorizontalBarStacked10(i)}
+		}
+
+		if(webDevObjects[0].charts[i][2] == 'line'  && webDevObjects[0].charts[i][11] == false){
+			if (DataPointsArray.length == 0) {addChartLine1(i)}
+			if (DataPointsArray.length == 1) {addChartLine2(i)}
+			if (DataPointsArray.length == 2) {addChartLine3(i)}
+			if (DataPointsArray.length == 3) {addChartLine4(i)}
+			if (DataPointsArray.length == 4) {addChartLine5(i)}
+			if (DataPointsArray.length == 5) {addChartLine6(i)}
+			if (DataPointsArray.length == 6) {addChartLine7(i)}
+			if (DataPointsArray.length == 7) {addChartLine8(i)}
+			if (DataPointsArray.length == 8) {addChartLine9(i)}
+			if (DataPointsArray.length == 9) {addChartLine10(i)}
+		}
 	}
-
 }
+
+
+
+
+
+
+
+
 
 
 function addMeasure() {
@@ -168,10 +164,7 @@ function addMeasure() {
 				${webDevObjects[0].measures[i][2]} <span class='badge badge-light'>${webDevObjects[0].measures[i][3]}</span>${webDevObjects[0].measures[i][4]}
 			</button>
 		</div>
-		
 		`
-		//<div class="container-fluid" align="center" style='width:${screenWidthPercent(webDevObjects[0].measures[i][5])}'>
-		//</div>
 	}
 }
 
@@ -182,7 +175,7 @@ function createInnerTable(k,i){
 	if (i == 2) {
 		//First Row
 		if (webDevObjects[0].tables[k][1][1] == "yes") {
-		
+
 			//Table Headers
 			for (j = 0; j < webDevObjects[0].tables[k][2].length; j++){
 				rc += `
@@ -190,16 +183,16 @@ function createInnerTable(k,i){
 				`
 			};
 		} else {
-	
+
 			//Table Body
 			for (j = 0; j < webDevObjects[0].tables[k][2].length; j++){
-				
+
 				rc += `
 					<td>${webDevObjects[0].tables[k][i][j]}</td>
 				`
 			};
 		};
-	} else { 
+	} else {
 	//Not First Row
 		for (j = 0; j < webDevObjects[0].tables[k][2].length; j++){
 				rc += `
@@ -217,7 +210,7 @@ function createTableRow(k){
 		rw += `
 			<tr>
 				${createInnerTable(k,i)}
-			</tr>	
+			</tr>
 		`
 	};
 	return rw
@@ -229,9 +222,9 @@ function createTable(k){
 	DivClass = (webDevObjects[0].tables[k][1][4])
 	txt = `
 	<div style='width:${tableWidth}px;padding:5px; ${tableStyles}' class='${DivClass}'>
-		<table class='${webDevObjects[0].tables[k][1][0]}' align='center'> 
+		<table class='${webDevObjects[0].tables[k][1][0]}' align='center'>
 			${createTableRow(k)}
-		</table>	
+		</table>
 	</div>
 	`
 	x = document.getElementById(webDevObjects[0].tables[k][0])
@@ -272,7 +265,7 @@ function navBarDropdown(){
 	return txt
 }
 function navBar(){
-	
+
 	return `
 			<nav class='navbar navbar-expand-sm bg-dark navbar-dark' style="margin-top:-20px;position:fixed;width:100%;color:white;font-weight:bold;'>
 			<a class='navbar-brand' href='https://www.allform.tech' target="none" id='navBarTitle'>${webDevObjects[0].pageDetails.navBarTitle} &nbsp; &nbsp; </a>
