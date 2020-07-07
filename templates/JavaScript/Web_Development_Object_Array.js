@@ -9,15 +9,56 @@ webDevObjects = [
 		  },
 		  
 		charts : 
-		[
-			["r2-c1", "My Title",1,2,"pie","","",true,"chart1-1",400,"25%"], //Chart Details		webDevObjects[0].charts[0][3] = "pie"
-			["r3-c2", "My Title",1,2,"pie","","",true,"chart1-1",400,"25%"], //Chart Details
+		[	
+			//webDevObjects[0].charts[0][6][1][0] = 'orange'
+			//webDevObjects[0].charts[0][5][0][0] = 10
+			//webDevObjects[0].charts[0][3] = 400
+			//webDevObjects[0].charts[0][2] = 'pie'																						
+			['r5-c1', 'My Title','pie',50,150,
+			//     			Data Points	
+				[[10,50,20,39,54,44,45],[14,44,57,99,54,57,88],],
+				//Labels	
+				['Dataset 1'],
+				//												Background Color
+				[['green','red','blue','orange','pink','brown','purple'],],
+				//													Border Color
+				[['green','red','blue','orange','pink','brown','purple'],],
+				//Labels	
+				['Kris','Ben','John','Michle','James','Tim','Ryan'],
+			], 
+			
+			['r5-c2', 'My Title','bar',50,150,
+			//     			Data Points	
+				[[10,50,20,39,54,44,45],[14,44,57,99,54,57,88],[11,22,57,88,99,55,44],],
+				//Labels	
+				['Dataset 1','Dataset 2','Dataset 3'],
+				//												Background Color
+				[['green','green','green','green','green','green','green'],['orange','orange','orange','orange','orange','orange','orange'],['pink','pink','pink','pink','pink','pink','pink'],],
+				//													Border Color
+				[['green','green','green','green','green','green','green'],['orange','orange','orange','orange','orange','orange','orange'],['pink','pink','pink','pink','pink','pink','pink'],],
+				//Labels	
+				['Kris','Ben','John','Michle','James','Tim','Ryan'],
+			],
+			
 		],
 		  
 		measures :
 		[
-			["r1-c1","btn-warning","Qty",2,""],  //Measure Details				webDevObjects[0].measures[0][1] = "Qty"
-			["r1-c2","btn-warning","Qty",2,""],  //Measure Details
+			
+			["r1-c5","","Marked Q1: ",500," m","220",";background-color:purple;border:purple;color:white;"],  //Measure Details
+			["r1-c5","btn-dark","Marked Q2: ",500," m","220",""],  //Measure Details
+			["r1-c6","","Marked Q3: ",200," cm","220",";background-color:crimson;border:crimson;color:white;"],  //Measure Details				webDevObjects[0].measures[0][1] = "Qty"
+			["r1-c6","btn-success","Marked Q4: ",500," m","220",""],  //Measure Details
+			["r1-c7","","Qty: ",500," m","220",";background-color:purple;border:purple;color:white;"],  //Measure Details
+			["r1-c7","btn-primary","Qty: ",500," m","220",""],  //Measure Details
+			["r1-c8","","Qty: ",500," m","220",";background-color:orange;border:orange;color:white;"],  //Measure Details
+			["r1-c8","btn-secondary","Qty: ",500," m","220",""],  //Measure Details
+			["r1-c9","","Qty: ",200," cm","220",";background-color:pink;border:pinkcolor:white;color:white;"],  //Measure Details				webDevObjects[0].measures[0][1] = "Qty"
+			["r1-c9","btn-warning","Qty: ",500," m","220",";color:white;"],  //Measure Details
+			["r1-c10","","Qty: ",500," m","220",";background-color:black;border:black;color:white;"],  //Measure Details
+			["r1-c10","btn-info","Qty: ",500," m","220",""],  //Measure Details
+			["r1-c11","","Qty: ",500," m","220",";background-color:teal;border:teal;color:white;"],  //Measure Details
+			["r1-c11","btn-danger","Qty: ",500," m","220",""],  //Measure Details
 		],
 		  
 		navBar :
