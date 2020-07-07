@@ -3,48 +3,106 @@ webDevObjects = [
 		pageDetails :
 		  {
 		   pageTitle : "My page",							//webDevObjects[0].pageDetails.pageTitle = "My page"
-		   navBarTitle : "Allform Software Solutions",	
+		   navBarTitle : "Allform Software Solutions",
 		   headingText : "My heading",
 		   headingClass : "alert alert-info",
 		  },
-		  
-		charts : 
-		[	
+
+		charts :
+		[
 			//webDevObjects[0].charts[0][6][1][0] = 'orange'
 			//webDevObjects[0].charts[0][5][0][0] = 10
 			//webDevObjects[0].charts[0][3] = 400
-			//webDevObjects[0].charts[0][2] = 'pie'																						
-			['r5-c1', 'My Title','pie',50,150,
-			//     			Data Points	
+			//webDevObjects[0].charts[0][2] = 'pie'
+			['r5-c1', 'My Title','pie',30,150,
+			//     			Data Points
 				[[10,50,20,39,54,44,45],[14,44,57,99,54,57,88],],
-				//Labels	
+				//Labels
 				['Dataset 1'],
 				//												Background Color
 				[['green','red','blue','orange','pink','brown','purple'],],
 				//													Border Color
-				[['green','red','blue','orange','pink','brown','purple'],],
-				//Labels	
-				['Kris','Ben','John','Michle','James','Tim','Ryan'],
-			], 
-			
-			['r5-c2', 'My Title','bar',50,150,
-			//     			Data Points	
-				[[10,50,20,39,54,44,45],[14,44,57,99,54,57,88],[11,22,57,88,99,55,44],],
-				//Labels	
-				['Dataset 1','Dataset 2','Dataset 3'],
-				//												Background Color
-				[['green','green','green','green','green','green','green'],['orange','orange','orange','orange','orange','orange','orange'],['pink','pink','pink','pink','pink','pink','pink'],],
-				//													Border Color
-				[['green','green','green','green','green','green','green'],['orange','orange','orange','orange','orange','orange','orange'],['pink','pink','pink','pink','pink','pink','pink'],],
-				//Labels	
-				['Kris','Ben','John','Michle','James','Tim','Ryan'],
+				[['gray','gray','gray','gray','gray','gray','gray'],],
+				//Labels
+				['Kris','Ben','John','Michle','James','Tim','Ryan']
+        ,false
 			],
-			
+
+			['r5-c2', 'My Title','horizontalBar',30,150,
+			//     			Data Points
+				[[10,50,20,39,54,44,45],[14,44,57,99,54,57,88],[11,22,57,88,99,55,44],[45,54,74,44,12,12,45],],
+				//Labels
+				['Dataset 1','Dataset 2','Dataset 3','Dataset 4'],
+				//												Background Color
+				[['green','green','green','green','green','green','green'],['orange','orange','orange','orange','orange','orange','orange'],['pink','pink','pink','pink','pink','pink','pink'],['red','red','red','red','red','red','red']],
+				//													Border Color
+				[['gray','gray','gray','gray','gray','gray','gray'],['gray','gray','gray','gray','gray','gray','gray'],['gray','gray','gray','gray','gray','gray','gray'],['gray','gray','gray','gray','gray','gray','gray']],
+				//Labels
+				['Kris','Ben','John','Michle','James','Tim','Ryan'],
+        ,false
+			],
+
+      ['r5-c3', 'My Title','line',30,150,
+			//     			Data Points
+				[[10,50,20,39,54,44,45],[14,44,57,99,54,57,88],[11,22,57,88,99,55,44],[45,54,74,44,12,12,45],],
+				//Labels
+				['Dataset 1','Dataset 2','Dataset 3','Dataset 4'],
+				//												Background Color
+        [['green','green','green','green','green','green','green'],['orange','orange','orange','orange','orange','orange','orange'],['pink','pink','pink','pink','pink','pink','pink'],['red','red','red','red','red','red','red']],
+				//													Border Color
+				[['green'],['orange'],['pink'],['red']],
+        //Labels
+				['Kris','Ben','John','Michle','James','Tim','Ryan'],
+        ,false
+			],
+
+      ['r6-c1', 'My Title','bar',30,150,
+			//     			Data Points
+				[[10,50,20,39,54,44,45],[14,44,57,99,54,57,88],[11,22,57,88,99,55,44],[45,54,74,44,12,12,45],],
+				//Labels
+				['Dataset 1','Dataset 2','Dataset 3','Dataset 4'],
+				//												Background Color
+				[['green','green','green','green','green','green','green'],['orange','orange','orange','orange','orange','orange','orange'],['pink','pink','pink','pink','pink','pink','pink'],['red','red','red','red','red','red','red']],
+				//													Border Color
+				[['gray','gray','gray','gray','gray','gray','gray'],['gray','gray','gray','gray','gray','gray','gray'],['gray','gray','gray','gray','gray','gray','gray'],['gray','gray','gray','gray','gray','gray','gray']],
+				//Labels
+				['Kris','Ben','John','Michle','James','Tim','Ryan'],
+        ,false
+			],
+      ['r6-c2', 'My Title','bar',30,150,
+			//     			Data Points
+				[[10,50,20,39,54,44,45],[14,44,57,99,54,57,88],[11,22,57,88,99,55,44],[45,54,74,44,12,12,45],],
+				//Labels
+				['Dataset 1','Dataset 2','Dataset 3','Dataset 4'],
+				//												Background Color
+				[['green','green','green','green','green','green','green'],['orange','orange','orange','orange','orange','orange','orange'],['pink','pink','pink','pink','pink','pink','pink'],['red','red','red','red','red','red','red']],
+				//													Border Color
+				[['gray','gray','gray','gray','gray','gray','gray'],['gray','gray','gray','gray','gray','gray','gray'],['gray','gray','gray','gray','gray','gray','gray'],['gray','gray','gray','gray','gray','gray','gray']],
+				//Labels
+				['Kris','Ben','John','Michle','James','Tim','Ryan'],
+        ,true
+			],
+      ['r6-c3', 'My Title','horizontalBar',30,150,
+			//     			Data Points
+				[[10,50,20,39,54,44,45],[14,44,57,99,54,57,88],[11,22,57,88,99,55,44],[45,54,74,44,12,12,45],],
+				//Labels
+				['Dataset 1','Dataset 2','Dataset 3','Dataset 4'],
+				//												Background Color
+				[['green','green','green','green','green','green','green'],['orange','orange','orange','orange','orange','orange','orange'],['pink','pink','pink','pink','pink','pink','pink'],['red','red','red','red','red','red','red']],
+				//													Border Color
+				[['gray','gray','gray','gray','gray','gray','gray'],['gray','gray','gray','gray','gray','gray','gray'],['gray','gray','gray','gray','gray','gray','gray'],['gray','gray','gray','gray','gray','gray','gray']],
+				//Labels
+				['Kris','Ben','John','Michle','James','Tim','Ryan'],
+        ,true
+			],
+
+
+
 		],
-		  
+
 		measures :
 		[
-			
+
 			["r1-c5","","Marked Q1: ",500," m","220",";background-color:purple;border:purple;color:white;"],  //Measure Details
 			["r1-c5","btn-dark","Marked Q2: ",500," m","220",""],  //Measure Details
 			["r1-c6","","Marked Q3: ",200," cm","220",";background-color:crimson;border:crimson;color:white;"],  //Measure Details				webDevObjects[0].measures[0][1] = "Qty"
@@ -60,10 +118,10 @@ webDevObjects = [
 			["r1-c11","","Qty: ",500," m","220",";background-color:teal;border:teal;color:white;"],  //Measure Details
 			["r1-c11","btn-danger","Qty: ",500," m","220",""],  //Measure Details
 		],
-		  
+
 		navBar :
 		[
-			
+
 			[
 				["Heading 1","Heading 2"], //NavBar Dropdown Headings	webDevObjects[0].navBar[0][0][0] = "Heading 1"
 			],
@@ -76,29 +134,29 @@ webDevObjects = [
 				["Heading 2 Link 2","#"], //NavBar Dropdown Link
 			],
 
-		],	
-		
+		],
+
 		tables :
 		[
 			["r3-c1",								//webDevObjects[0].tables[0][0] = "r11-c0"
-					["table table-hover", "yes", 49.8, "padding:10px", "item "],		//webDevObjects[0].tables[0][1][0] = "table table-dark-hover"										
-				
+					["table table-hover", "yes", 49.8, "padding:10px", "item "],		//webDevObjects[0].tables[0][1][0] = "table table-dark-hover"
+
 					["Name","Age","Gender","DoB"], 	//Table Header 			webDevObjects[0].tables[0][2][0] = "Name"
 					["Kris","36","M","12/3/1990"],	//Table body Row 1		webDevObjects[0].tables[0][3][2] = "M"
 					["Tim","28","M","4/12/1987"],		//Table body Row 2		webDevObjects[0].tables[0][4][1] = 28
 					["Jane","32","F","3/10/200"],		//Table body Row 3
 			],
 			["r3-c2",								//webDevObjects[0].tables[1][0] = "r11-c1"
-					["table table-dark table-hover", "no", 49.8,  "padding:10px", "item "], //webDevObjects[0].tables[1][1][1] = "no"												
-				
+					["table table-dark table-hover", "no", 49.8,  "padding:10px", "item "], //webDevObjects[0].tables[1][1][1] = "no"
+
 					["Name","Age","Gender","DoB"], 	//Table Header 			webDevObjects[0].tables[1][2][0] = "Name"
 					["Kris","36","M","12/3/1990"],	//Table body Row 1		webDevObjects[0].tables[1][3][0] = "Kris"
 					["Tim","28","M","4/12/1987"],		//Table body Row 2		webDevObjects[0].tables[1][4][1]  = 28
 					["Jane","32","F","3/10/200"],		//Table body Row 3
 			],
 		],
-		
+
 		//More Elements/Objects Here
-		
+
 	}
 ];
