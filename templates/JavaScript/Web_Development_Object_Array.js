@@ -156,7 +156,154 @@ webDevObjects = [
 			],
 		],
 
-		//More Elements/Objects Here
+		text :
+		[
+			['r7-c1',35,400,"margin-left:35%; text-align:left;","center",
+			`<div class='item'>
+				<h1 class="">Excel Web Development Add-In</h1>
+				<p>
+				  Below are numerious tools to assist with the Excel Web Development Add-in.
+				  <br>
+				  <a href="">Download</a> - <a href="#">Documentation</a>
+				</p>
+				<table>
+				  <tbody><tr>
+					<td>
+					  <p>
+						</p><h4>Examples:</h4>
+						<ul>
+						  <li>
+							<a href="#">Resume</a>
+						  </li>
+						  <li>
+							<a href="#">Artical</a>
+						  </li>
+						  <li>
+							<a href="#">Dashboard</a>
+						  </li>
+						  <li>
+							<a href="#">Profile</a>
+						  </li>
+						  <li>
+							<a href="#">Navigation</a>
+						  </li>
+						  <li>
+							<a href="#">Invite</a>
+						  </li>
+						  <li>
+							<a href="#">Information</a>
+						  </li>
+						</ul>
+					  <p></p>
+					</td>
+					<td style="padding-left:80px; padding-top: 0px; vertical-align:top;width:300px;">
+					  <p>
+						</p><h4>Documentation:</h4>
+						<ul>
+						  <li>
+							<a href="#">Overview</a>
+						  </li>
+						  <li>
+							<a href="#">Text</a>
+						  </li>
+						  <li>
+							<a href="#">Tables</a>
+						  </li>
+						  <li>
+							<a href="#">Blur Filters</a>
+						  </li>
+						  <li>
+							<a href="#">Images</a>
+						  </li>
+						  <li>
+							<a href="#">Charts</a>
+						  </li>
+						  <li>
+							<a href="#">Metrics</a>
+						  </li>
+						</ul>
+					  <p></p>
+					</td>
+				  </tr>
+				</tbody></table>
+				</div>
+			`
+			],
+			['r7-c2',35,400,"margin-right:25%; text-align:left;","center",
+			`<div class='item'>
+				<h1 class="">Excel Web Development Add-In</h1>
+				<p>
+				  Below are numerious tools to assist with the Excel Web Development Add-in.
+				  <br>
+				  <a href="">Download</a> - <a href="#">Documentation</a>
+				</p>
+				<table>
+				  <tbody><tr>
+					<td>
+					  <p>
+						</p><h4>Examples:</h4>
+						<ul>
+						  <li>
+							<a href="#">Resume</a>
+						  </li>
+						  <li>
+							<a href="#">Artical</a>
+						  </li>
+						  <li>
+							<a href="#">Dashboard</a>
+						  </li>
+						  <li>
+							<a href="#">Profile</a>
+						  </li>
+						  <li>
+							<a href="#">Navigation</a>
+						  </li>
+						  <li>
+							<a href="#">Invite</a>
+						  </li>
+						  <li>
+							<a href="#">Information</a>
+						  </li>
+						</ul>
+					  <p></p>
+					</td>
+					<td style="padding-left:80px; padding-top: 0px; vertical-align:top;width:300px;">
+					  <p>
+						</p><h4>Documentation:</h4>
+						<ul>
+						  <li>
+							<a href="#">Overview</a>
+						  </li>
+						  <li>
+							<a href="#">Text</a>
+						  </li>
+						  <li>
+							<a href="#">Tables</a>
+						  </li>
+						  <li>
+							<a href="#">Blur Filters</a>
+						  </li>
+						  <li>
+							<a href="#">Images</a>
+						  </li>
+						  <li>
+							<a href="#">Charts</a>
+						  </li>
+						  <li>
+							<a href="#">Metrics</a>
+						  </li>
+						</ul>
+					  <p></p>
+					</td>
+				  </tr>
+				</tbody></table>
+				</div>
+			`
+			],
+			
+			
+		],
+		
 
 	}
 ];
