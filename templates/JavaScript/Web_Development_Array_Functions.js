@@ -63,7 +63,7 @@ return [{	label:DataPointsArray[k-1].label,
 					backgroundColor: DataPointsArray[k-1].backgroundColor,
 					borderColor: DataPointsArray[k-1].borderColor,
 					borderWidth: 1,
-					order: k,
+					order: 1, //use to be k
 				}]
 }
 
