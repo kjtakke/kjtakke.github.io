@@ -64,6 +64,7 @@ return [{	label:DataPointsArray[k-1].label,
 					borderColor: DataPointsArray[k-1].borderColor,
 					borderWidth: 1,
 					order: 1, //use to be k
+
 				}]
 }
 
@@ -280,7 +281,7 @@ function createMasterTable(){
 	let txt = ""
 		for (i = 0; i < 50; i++){
 			txt +=  `
-		<table style="width:100%" id="r${i}" align='center'>
+		<table style='width:100%;' id='r${i}' align='center'>
 					<tr>
 						${innerMasterTable(i)}
 					</tr>
@@ -301,6 +302,32 @@ function addText(){
 	x.innerHTML += txt
 	}
 }
+
+//<iframe src="http://buythecity.com"  scrolling="no" style=" width: 550px; height: 500px;  overflow: hidden;" ></iframe>
+//webDevObjects[0].iframe.length
+function addIframe(){
+	for (i = 0; i < webDevObjects[0].iframe.length; i++){
+		x = document.getElementById(webDevObjects[0].iframe[i][0])
+		let txt = `
+				<iframe src='${webDevObjects[0].iframe[i][6]}'  scrolling='${webDevObjects[0].iframe[i][5]}' style=' width: ${screenWidthPercent(webDevObjects[0].iframe[i][1])}px; height: ${webDevObjects[0].iframe[i][2]}px; overflow: ${webDevObjects[0].iframe[i][7]};${webDevObjects[0].iframe[i][3]}'frameBorder=' ${webDevObjects[0].iframe[i][8]}'></iframe>
+				`
+	x.innerHTML += txt
+	}
+}
+
+function addImage(){
+	for (i = 0; i < webDevObjects[0].images.length; i++){
+		x = document.getElementById(webDevObjects[0].images[i][0])
+		let txt = `
+				<div align='${webDevObjects[0].images[i][4]}'>
+					<img src='${webDevObjects[0].images[i][5]}' style=' width: ${screenWidthPercent(webDevObjects[0].images[i][1])}px; height: ${webDevObjects[0].images[i][2]}px; ${webDevObjects[0].images[i][3]}'></img>
+				</div>
+				`
+	x.innerHTML += txt
+	}
+}
+
+
 //#################################################################################################
 function main() {
 		x = document.getElementById("main")
@@ -311,6 +338,8 @@ function main() {
 		addMeasure()
 		addCharts()
 		addText()
+		addIframe()
+		addImage()
 	}
 //#################################################################################################
 $(document).ready(main());
