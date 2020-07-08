@@ -521,16 +521,17 @@ function addChartBarStacked1(i){
 			legend: {
 				display: true,
 			},
-			scales: {
-        xAxes: [{stacked: true}],
-				yAxes: [{
-					ticks: {
-            stacked: true,
-						beginAtZero: true,
-					},
-				}]
-			},
-		},
+		responsive: true,
+		scales: {
+			xAxes: [{
+				stacked: true
+			}],
+			yAxes: [{
+			stacked: true,
+			beginAtZero: true,
+			}]
+		}
+	},
 		data: {
 
 			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -567,16 +568,17 @@ function addChartBarStacked2(i){
 			legend: {
 				display: true,
 			},
-      scales: {
-        xAxes: [{stacked: true}],
-				yAxes: [{
-					ticks: {
-            stacked: true,
-						beginAtZero: true,
-					},
-				}]
-			},
-		},
+		responsive: true,
+		scales: {
+			xAxes: [{
+				stacked: true
+			}],
+			yAxes: [{
+			stacked: true,
+			beginAtZero: true,
+			}]
+		}
+	},
 		data: {
 
 			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -616,16 +618,17 @@ function addChartBarStacked3(i){
 			legend: {
 				display: true,
 			},
-      scales: {
-        xAxes: [{stacked: true}],
-				yAxes: [{
-					ticks: {
-            stacked: true,
-						beginAtZero: true,
-					},
-				}]
-			},
-		},
+		responsive: true,
+		scales: {
+			xAxes: [{
+				stacked: true
+			}],
+			yAxes: [{
+			stacked: true,
+			beginAtZero: true,
+			}]
+		}
+	},
 		data: {
 
 			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -663,16 +666,17 @@ function addChartBarStacked4(i){
 			legend: {
 				display: true,
 			},
-      scales: {
-        xAxes: [{stacked: true}],
-				yAxes: [{
-					ticks: {
-            stacked: true,
-						beginAtZero: true,
-					},
-				}]
-			},
-		},
+		responsive: true,
+		scales: {
+			xAxes: [{
+				stacked: true
+			}],
+			yAxes: [{
+			stacked: true,
+			beginAtZero: true,
+			}]
+		}
+	},
 		data: {
 
 			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -706,21 +710,23 @@ function addChartBarStacked5(i){
 	`
 	var ctx = document.getElementById(CID).getContext('2d');
 	var myChart = new Chart(ctx, {
+
 		type: webDevObjects[0].charts[i][2],
 		options: {
 			legend: {
 				display: true,
 			},
-      scales: {
-        xAxes: [{stacked: true}],
-				yAxes: [{
-					ticks: {
-            stacked: true,
-						beginAtZero: true,
-					},
-				}]
-			},
-		},
+		responsive: true,
+		scales: {
+			xAxes: [{
+				stacked: true
+			}],
+			yAxes: [{
+			stacked: true,
+			beginAtZero: true,
+			}]
+		}
+	},
 		data: {
 
 			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -760,16 +766,17 @@ function addChartBarStacked6(i){
 			legend: {
 				display: true,
 			},
-      scales: {
-        xAxes: [{stacked: true}],
-				yAxes: [{
-					ticks: {
-            stacked: true,
-						beginAtZero: true,
-					},
-				}]
-			},
-		},
+		responsive: true,
+		scales: {
+			xAxes: [{
+				stacked: true
+			}],
+			yAxes: [{
+			stacked: true,
+			beginAtZero: true,
+			}]
+		}
+	},
 		data: {
 
 			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -809,16 +816,17 @@ function addChartBarStacked7(i){
 			legend: {
 				display: true,
 			},
-      scales: {
-        xAxes: [{stacked: true}],
-				yAxes: [{
-					ticks: {
-            stacked: true,
-						beginAtZero: true,
-					},
-				}]
-			},
-		},
+		responsive: true,
+		scales: {
+			xAxes: [{
+				stacked: true
+			}],
+			yAxes: [{
+			stacked: true,
+			beginAtZero: true,
+			}]
+		}
+	},
 		data: {
 
 			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -860,16 +868,17 @@ function addChartBarStacked8(i){
 			legend: {
 				display: true,
 			},
-      scales: {
-        xAxes: [{stacked: true}],
-				yAxes: [{
-					ticks: {
-            stacked: true,
-						beginAtZero: true,
-					},
-				}]
-			},
-		},
+		responsive: true,
+		scales: {
+			xAxes: [{
+				stacked: true
+			}],
+			yAxes: [{
+			stacked: true,
+			beginAtZero: true,
+			}]
+		}
+	},
 		data: {
 
 			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -912,16 +921,17 @@ function addChartBarStacked9(i){
 			legend: {
 				display: true,
 			},
-      scales: {
-        xAxes: [{stacked: true}],
-				yAxes: [{
-					ticks: {
-            stacked: true,
-						beginAtZero: true,
-					},
-				}]
-			},
-		},
+		responsive: true,
+		scales: {
+			xAxes: [{
+				stacked: true
+			}],
+			yAxes: [{
+			stacked: true,
+			beginAtZero: true,
+			}]
+		}
+	},
 		data: {
 
 			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -965,16 +975,17 @@ function addChartBarStacked10(i){
 			legend: {
 				display: true,
 			},
-      scales: {
-        xAxes: [{stacked: true}],
-				yAxes: [{
-					ticks: {
-            stacked: true,
-						beginAtZero: true,
-					},
-				}]
-			},
-		},
+		responsive: true,
+		scales: {
+			xAxes: [{
+				stacked: true
+			}],
+			yAxes: [{
+			stacked: true,
+			beginAtZero: true,
+			}]
+		}
+	},
 		data: {
 
 			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
