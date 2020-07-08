@@ -145,16 +145,6 @@ function addCharts(){
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
 function addMeasure() {
 	for (i = 0;i < webDevObjects[0].measures.length ;i++){
 		x = document.getElementById(webDevObjects[0].measures[i][0])
@@ -167,8 +157,6 @@ function addMeasure() {
 		`
 	}
 }
-
-
 function createInnerTable(k,i){
 	var rc = ""
 	//Does the table have headers
@@ -301,6 +289,18 @@ function createMasterTable(){
 		}
   return txt
 }
+//webDevObjects[0].text[0][i]
+function addText(){
+	for (i = 0; i < webDevObjects[0].text.length; i++){
+		x = document.getElementById(webDevObjects[0].text[i][0])
+		let txt = `
+			<div align='${webDevObjects[0].text[i][4]}' style='width: ${screenWidthPercent(webDevObjects[0].text[i][1])}px;height: ${webDevObjects[0].text[i][2]}px;${webDevObjects[0].text[i][3]}'>
+				${webDevObjects[0].text[i][5]}
+			</div>
+		`
+	x.innerHTML += txt
+	}
+}
 //#################################################################################################
 function main() {
 		x = document.getElementById("main")
@@ -310,6 +310,7 @@ function main() {
 		selectTables()
 		addMeasure()
 		addCharts()
+		addText()
 	}
 //#################################################################################################
 $(document).ready(main());
