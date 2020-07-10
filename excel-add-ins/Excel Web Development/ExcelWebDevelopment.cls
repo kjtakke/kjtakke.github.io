@@ -31,12 +31,13 @@ End Sub
 Sub AddLocations()
     Dim lb As Object
     
-    For i = 1 To 5
+    For i = 1 To 6
         If i = 1 Then Set lb = Me.WDTableLocation
         If i = 2 Then Set lb = Me.WDMeasureLocation
         If i = 3 Then Set lb = Me.WDiFrameLocation
         If i = 4 Then Set lb = Me.WDChartLocation
         If i = 5 Then Set lb = Me.WDTextLocation
+        If i = 6 Then Set lb = Me.WDImageLocation
         
         lb.AddItem "r0-c0"
         lb.AddItem "r0-c1"
@@ -1111,5 +1112,6 @@ Sub AddLocations()
         lb.AddItem "r50-c20"
     Next i
 End Sub
+
 
 
