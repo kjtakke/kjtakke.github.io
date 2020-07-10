@@ -1,3 +1,4 @@
+'Class Module
 Public MD, ED, SD, OD As String
 Public WDPages, WDPage, WDNavBar, WDNavBarHeadings, WDNavBarLinks, WDMeasures, WDMeasure, WDTables, WDTable, WDCharts, WDChart, WDTexts, WDText, WDImages, WDImage, WDiFrames, WDiFrame As Variant
 Public WDXLWDStr, WDPagesStr, WDPageStr, WDNavBarStr, WDNavBarHeadingsStr, WDNavBarLinksStr, WDMeasuresStr, WDMeasureStr, WDTablesStr, WDTableStr, WDChartsStr, WDChartStr, WDTextsStr, WDTextStr, WDImagesStr, WDImageStr, WDiFramesStr, WDiFrameStr As String
@@ -32,7 +33,6 @@ Private Sub Class_Initialize()
     WDImageCnt = 7
     WDiFramesCnt = 100
     WDiFrameCnt = 7
-
     
     ReDim WDPages(1 To WDPagesCnt)
     ReDim WDPage(1 To WDPageCnt)
