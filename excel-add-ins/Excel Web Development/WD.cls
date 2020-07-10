@@ -1,3 +1,12 @@
+VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+END
+Attribute VB_Name = "WD"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
 'Class Module
 Public MD, ED, SD, OD As String
 Public WDPages, WDPage, WDNavBar, WDNavBarHeadings, WDNavBarLinks, WDMeasures, WDMeasure, WDTables, WDTable, WDCharts, WDChart, WDTexts, WDText, WDImages, WDImage, WDiFrames, WDiFrame As Variant
@@ -33,7 +42,7 @@ Private Sub Class_Initialize()
     WDImageCnt = 7
     WDiFramesCnt = 100
     WDiFrameCnt = 7
-    
+
     ReDim WDPages(1 To WDPagesCnt)
     ReDim WDPage(1 To WDPageCnt)
     ReDim WDNavBar(1 To WDNavBarCnt)
