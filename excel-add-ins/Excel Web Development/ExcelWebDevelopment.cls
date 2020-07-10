@@ -50,7 +50,7 @@ Sub AddLocations()
             cnt = cnt + 21
         Next k
         
-        For j = 1 To UBound(locationArray)
+        For j = 0 To UBound(locationArray)
             lb.AddItem locationArray(j)
         Next j
     Next i
