@@ -2,25 +2,109 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://kjtakke.github.io/cards.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <style>
+    body{
+      background-image: url("https://blogs.biomedcentral.com/on-medicine/wp-content/uploads/sites/6/2019/09/iStock-1131794876.t5d482e40.m800.xtDADj9SvTVFjzuNeGuNUUGY4tm5d6UGU5tkKM0s3iPk-620x342.jpg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    body {
+  font-family: sans-serif;
+  background-color: #DEDEDE;
+  color: #333;
+  padding: 20px 0 28px 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.app-title {
+  text-align: center;
+  font-weight: normal;
+  font-size: 2.6rem;
+}
+
+.item2 {
+  max-width: 95%;
+  padding: 20px;
+  margin: 30px auto;
+  background-color: #FFF;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
+  overflow: hidden;
+  opacity: 0.9;
+}
+
+.item {
+  max-width: 95%;
+  padding: 20px;
+  margin: 30px auto;
+  background-color: #FFF;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
+  overflow: hidden;
+  opacity: 0.9;
+}
+
+.item-title h4 {
+  margin: 0 0 6px 0;
+}
+
+.item-photo {
+  float: left;
+  width: 40%;
+  margin-right: 15px;
+}
+
+.item-name {
+  font-size: 2rem;
+  font-weight: normal;
+  margin: 0 0 1rem 0;
+}
+
+.alt-text {
+  font-size: .9rem;
+  color: #888;
+  vertical-align: middle;
+}
+
+.item-list {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 17px;
+  font-size: .85rem;
+  line-height: 1.5;
+}
+
+.footer {
+  font-size: .7rem;
+  color: #888;
+  text-align: center;
+  margin: 0;
+}
+    </style>
 </head>
-<body onload="loadPageData()" style="width:380px">
-  <div id="Main" align="center">
+<body onload="loadPageData()" style="width:500px">
+  <div id="Main" align="center" class="item2" style="width:380px;">
     <form id="calForm"  style="text-aligh:left">
-      <div class="form-group" style="margin-left:25px;">
-      <label for="fname" style="text-aligh:center;"  class=""><h4>Select and add your items</h4></label><br>
+      <div class="form-group" style="margin-left:10px;">
+      <label for="fname" style="text-aligh:center;"  class=""><h2>Calorie Counter</h2></label><br>
       <select id="itemSelect" style="height:30px;"></select>
       <label for="fname"><h6> X </h6></label>
       <input type="number" id="grams" name="grams" style="width:100px;">
       <label for="fname">grams</label><br>
-      <button type="button" onclick="addToList()" class="btn btn-success" style="height:30px;width:160px;margin-top:5px;">
+      <button type="button" onclick="addToList()" class="btn btn-success" style="height:30px;width:160px;margin-top:-5px;">
         <h6>Add to List</h6>
       </button>
-      <button type="button" onclick="clearList()" class="btn btn-danger" style="height:30px;width:160px;margin-top:5px;">
+      <button type="button" onclick="clearList()" class="btn btn-danger" style="height:30px;width:160px;margin-top:-5px;">
         <h6>ClearList</h6>
       </button>
       <br>
@@ -32,17 +116,19 @@
   </form>
   <div style="margin-left:25px;">
 
-    <table class="table table-hover table-dark" id="selectedItems" style="width:320px" style="text-aligh:left;padding-top:-15px;">
+    <table class="table table-hover table-dark" id="selectedItems" style="width:320px" style="text-aligh:left;padding-top:-40px;">
       <tr>
         <th>Food</th><th>Calories</th>
       </tr>
     </table>
     <br><br>
+    </div>
+  </div>
     <div id="itemData" align="left"></div>
   </div>
 
 
-  </div>
+
 
 
   <script src="items.js"></script>
