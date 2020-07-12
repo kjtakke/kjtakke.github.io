@@ -8,12 +8,32 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </head>
-<body>
+<body onload="loadItems()">
   <div id="Main">
+    <form id="calForm">
+      <div class="form-group" style="margin-left:25px;">
+      <label for="fname" style="text-aligh:center;"  class=""><h4>Select and add your items</h4></label><br>
+      <select id="itemSelect" style="height:30px;"></select>
+      <label for="fname"><h6> X </h6></label>
+      <input type="number" id="fname" name="grams" style="width:100px;">
+      <label for="fname">grams</label><br>
+      <button type="button" onclick="addToList()" class="btn btn-info" style="height:30px;width:150px;">
+        <h6>Add to List</h6>
+      </button>
+      <button type="button" onclick="clearList()" class="btn btn-info" style="height:30px;width:150px;">
+        <h6>ClearList</h6>
+      </button>
+    </div>
+  </form>
+  <div style="margin-left:25px;">
+    <table class="table table-hover" id="selectedItems">
 
-sss
+    </table>
+  </div>
+
 
   </div>
+  <script src="items.js"></script>
   <script src="Calories-Calculator.js"></script>
 </body>
 </html>
