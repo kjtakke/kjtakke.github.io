@@ -1,5 +1,7 @@
 //Variables
 selections = new Array
+calories = new Array
+var calCount = 0
 //https://www.calories.info/food/vegetables
 //itemSelect
 //selectedItems
@@ -17,27 +19,49 @@ function loadItems(){
 
 }
 
-//var res = str.replace("Microsoft", "W3Schools");
+
+function updateCalCount(){
+  var calCount = 0
+  for (i = 0; i < itemsToAdd.length; i++){
+    for (j = 0; j < itemsToAdd.length; j++){
+      if (itemsToAdd[i][0] == selections[j]){
+        calCount += calories[j]
+      }
+    }
+  }
+}
 
 function addToList(){
-  var txt
-  var cmp
-  for (i = 0; i < itemsToAdd.length; i++){
-    txt = document.getElementById('itemSelect').innerHTML;
-    txt = txt.replace(/<option>/g, "");
-    txt = txt.replace(/option/g, "");
-    txt = txt.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'');
-    txt = txt.trim(txt);
-    cmp = itemsToAdd[i][0]
-    console.log(txt + " : " + cmp)
-    
-    if (txt == cmp){
-      document.getElementById('selectedItems').innerHTML +=`
-        <tr>
-          <td>${itemsToAdd[i][0]}</td>
-        </tr>
-      `
-      selections.push(itemsToAdd[i][0])
+
+  if (document.getElementById('grams').value == 0) {alert("Please input the quantity of grams.")
+} else{
+    var txt
+    var cmp
+    var qty = document.getElementById('grams').value
+    var cal
+    var gms
+    var totCal
+    for (i = 0; i < itemsToAdd.length; i++){
+      txt = document.getElementById('itemSelect').value;
+      cmp = itemsToAdd[i][0]
+
+
+      if (txt == cmp){
+        cal = itemsToAdd[i][4]
+        gms = itemsToAdd[i][3]
+        totCal = (cal/gms)*qty
+        document.getElementById('selectedItems').innerHTML +=`
+          <tr>
+            <td>${itemsToAdd[i][0]}</td>
+            <td>${totCal.toFixed(1)}</td>
+          </tr>
+        `
+        calCount += totCal
+        document.getElementById('caloriesCount').innerHTML = `<b>Calories: </b>${calCount.toFixed(1)}`
+        selections.push(itemsToAdd[i][0])
+        selections.push(totCal)
+        document.getElementById('grams').value = ""
+      }
     }
   }
 }
@@ -45,7 +69,25 @@ function addToList(){
 function clearList(){
   document.getElementById('selectedItems').innerHTML =""
 }
+
+function itemDataToPage(){
+  var cal
+  var gms
+  var totCal
+  for (i = 0; i < itemsToAdd.length; i++){
+    cal = itemsToAdd[i][4]
+    gms = itemsToAdd[i][3]
+    totCal = (cal/gms)*100
+    document.getElementById('itemData').innerHTML +=`
+    <div class="item">
+      <h4><b>Food:</b> ${itemsToAdd[i][0]}</h4>
+      <h5><b>Calories:</b> ${totCal} per 100g</h5>
+    </div>
+    `
+  }
+}
+
 function loadPageData(){
 loadItems()
-
+itemDataToPage()
 }
