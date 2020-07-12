@@ -23,11 +23,16 @@
       <button type="button" onclick="clearList()" class="btn btn-info" style="height:30px;width:160px;">
         <h6>ClearList</h6>
       </button>
+      <br><br>
+
+      <input type="number" id="servings" name="servings" style="width:50px;text-align:center;">
+      <label for="fname">Servings &nbsp;&nbsp;&nbsp;</label>
+      <label for="fname"><h6 id="caloriesCount"><b>Calories:</b> 0 per 100g</h6></label>
     </div>
   </form>
   <div style="margin-left:25px;">
-    <label for="fname"><h6 id="caloriesCount"></h6></label>
-    <table class="table table-hover" id="selectedItems" style="width:320px" style="text-aligh:left">
+
+    <table class="table table-hover table-dark" id="selectedItems" style="width:320px" style="text-aligh:left;padding-top:-15px;">
       <tr>
         <th>Food</th><th>Calories</th>
       </tr>

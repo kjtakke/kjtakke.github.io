@@ -33,13 +33,15 @@ function updateCalCount(){
 
 function addToList(){
 
-  if (document.getElementById('grams').value == 0) {alert("Please input the quantity of grams.")
+  if (document.getElementById('grams').value == 0 || document.getElementById('servings').value == 0 ) {alert("Please input the quantity of grams and servings.")
 } else{
+    document.getElementById("servings").disabled = true;
     var txt
     var cmp
     var qty = document.getElementById('grams').value
     var cal
     var gms
+    var serv = document.getElementById('servings').value;
     var totCal
     for (i = 0; i < itemsToAdd.length; i++){
       txt = document.getElementById('itemSelect').value;
@@ -49,7 +51,7 @@ function addToList(){
       if (txt == cmp){
         cal = itemsToAdd[i][3]
         gms = itemsToAdd[i][2]
-        totCal = (cal/gms)*qty
+        totCal = (cal/gms)*qty/serv
         document.getElementById('selectedItems').innerHTML +=`
           <tr>
             <td>${itemsToAdd[i][0]}</td>
@@ -68,6 +70,8 @@ function addToList(){
 
 function clearList(){
   document.getElementById('selectedItems').innerHTML = "<tr><th>Food</th><th>Calories</th></tr>"
+  calCount = 0
+  document.getElementById("servings").disabled = false;
 }
 
 function itemDataToPage(){
