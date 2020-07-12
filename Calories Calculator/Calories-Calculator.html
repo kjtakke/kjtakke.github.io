@@ -10,24 +10,24 @@
 </head>
 <body onload="loadPageData()">
   <div id="Main" align="center">
-    <form id="calForm">
+    <form id="calForm"  style="text-aligh:left">
       <div class="form-group" style="margin-left:25px;">
       <label for="fname" style="text-aligh:center;"  class=""><h4>Select and add your items</h4></label><br>
       <select id="itemSelect" style="height:30px;"></select>
       <label for="fname"><h6> X </h6></label>
       <input type="number" id="grams" name="grams" style="width:100px;">
       <label for="fname">grams</label><br>
-      <button type="button" onclick="addToList()" class="btn btn-info" style="height:30px;width:150px;">
+      <button type="button" onclick="addToList()" class="btn btn-info" style="height:30px;width:160px;">
         <h6>Add to List</h6>
       </button>
-      <button type="button" onclick="clearList()" class="btn btn-info" style="height:30px;width:150px;">
+      <button type="button" onclick="clearList()" class="btn btn-info" style="height:30px;width:160px;">
         <h6>ClearList</h6>
       </button>
     </div>
   </form>
   <div style="margin-left:25px;">
     <label for="fname"><h6 id="caloriesCount"></h6></label>
-    <table class="table table-hover" id="selectedItems" style="width:400px">
+    <table class="table table-hover" id="selectedItems" style="width:320px" style="text-aligh:left">
       <tr>
         <th>Food</th><th>Calories</th>
       </tr>

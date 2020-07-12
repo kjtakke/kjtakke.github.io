@@ -79,7 +79,7 @@ function itemDataToPage(){
     gms = itemsToAdd[i][2]
     totCal = (cal/gms) * 100
     document.getElementById('itemData').innerHTML +=`
-    <div class="item" style="width:700px;">
+    <div class="item" style="width:320px;">
       <h4><b>Food:</b> ${itemsToAdd[i][0]}</h4>
       <h4><b>Calories:</b> ${totCal.toFixed(0)} per 100g</h4>
     </div>
