@@ -47,8 +47,8 @@ function addToList(){
 
 
       if (txt == cmp){
-        cal = itemsToAdd[i][4]
-        gms = itemsToAdd[i][3]
+        cal = itemsToAdd[i][3]
+        gms = itemsToAdd[i][2]
         totCal = (cal/gms)*qty
         document.getElementById('selectedItems').innerHTML +=`
           <tr>
@@ -75,9 +75,9 @@ function itemDataToPage(){
   var gms
   var totCal
   for (i = 0; i < itemsToAdd.length; i++){
-    cal = itemsToAdd[i][4]
-    gms = itemsToAdd[i][3]
-    totCal = (cal/gms)*100
+    cal = itemsToAdd[i][3]
+    gms = itemsToAdd[i][2]
+    totCal = (cal/gms) * 100
     document.getElementById('itemData').innerHTML +=`
     <div class="item" style="width:700px;">
       <h4><b>Food:</b> ${itemsToAdd[i][0]}</h4>
