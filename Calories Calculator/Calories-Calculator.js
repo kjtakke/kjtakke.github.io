@@ -94,4 +94,5 @@ function itemDataToPage(){
 function loadPageData(){
 loadItems()
 itemDataToPage()
+document.body.style.zoom=2.0;this.blur();
 }
