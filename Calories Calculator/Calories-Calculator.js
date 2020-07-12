@@ -81,7 +81,7 @@ function itemDataToPage(){
     document.getElementById('itemData').innerHTML +=`
     <div class="item">
       <h4><b>Food:</b> ${itemsToAdd[i][0]}</h4>
-      <h5><b>Calories:</b> ${totCal.toFixed(0)} per 100g</h5>
+      <h4><b>Calories:</b> ${totCal.toFixed(0)} per 100g</h4>
     </div>
     `
   }
