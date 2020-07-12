@@ -67,13 +67,7 @@ function addToList(){
 }
 
 function clearList(){
-  document.getElementById('selectedItems').innerHTML ='
-  <tr>
-    <th>Food</th><th>Calories</th>
-  </tr>
-  '
-
-
+  document.getElementById('selectedItems').innerHTML = "<tr><th>Food</th><th>Calories</th></tr>"
 }
 
 function itemDataToPage(){
