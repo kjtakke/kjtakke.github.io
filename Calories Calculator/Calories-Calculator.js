@@ -72,6 +72,8 @@ function clearList(){
   document.getElementById('selectedItems').innerHTML = "<tr><th>Food</th><th>Calories</th></tr>"
   calCount = 0
   document.getElementById("servings").disabled = false;
+  document.getElementById("caloriesCount").innerHTML = `<b>Calories:</b> 0`
+
 }
 
 function itemDataToPage(){
