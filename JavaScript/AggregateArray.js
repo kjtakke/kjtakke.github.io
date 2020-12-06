@@ -70,7 +70,6 @@ data = [
       rVal.push(0)
     };
 
-
     //Aggregate values
     for(var j=1;j<data.length;j++){
     
