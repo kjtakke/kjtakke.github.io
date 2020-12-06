@@ -48,3 +48,22 @@ function arrayToHTMLTable(myArray) {
 
             return result;
         }
+
+function csvToArray(csv_url){
+  $.ajax({
+   url:csv_url,
+   dataType:text,
+   success:function(data)
+   {
+    var employee_data = data.split(/\r?\n|\r/);
+
+    //Array
+    for(var i = 0; i < employee_data.length; i++){
+      let tempArray = employee_data[i].split(",")
+      csvAray.push(tempArray)
+    }
+    document.getElementById("txt").innerHTML = csvAray[0][0];
+  }
+});
+return csvAray
+};
