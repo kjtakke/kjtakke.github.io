@@ -1,5 +1,4 @@
 function getPivotArray(dataArray, rowIndex, colIndex, dataIndex) {
-            //Code from https://techbrij.com
 			var result = {}, ret = [];
             var newCols = [];
             for (var i = 0; i < dataArray.length; i++) {
