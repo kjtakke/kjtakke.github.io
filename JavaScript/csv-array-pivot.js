@@ -67,3 +67,34 @@ function csvToArray(csv_url){
 });
 return csvAray
 };
+
+function arrayToDictionary(arr) {
+  
+  //Headers
+  let headers = []
+  for(var i=0;i<arr[0].length;i++){
+    headers.push(arr[0][i])
+  }
+
+  //Body
+  let body = []
+  for(var i=1;i<arr.length;i++){
+    let dictAry = []
+    for(var j=0;j<arr[0].length;j++){
+      dictAry.push(
+        [
+          headers[j], 
+          arr[i][j]
+        ]
+      )
+    }
+    
+    const obj = Object.fromEntries(
+      dictAry.map(
+       ([k, v]) => [k, v])
+       )
+ 
+    body.push(obj)
+  }
+  return body
+};
