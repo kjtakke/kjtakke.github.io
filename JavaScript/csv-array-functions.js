@@ -48,23 +48,24 @@ function arrayToHTMLTable(myArray) {
             return result;
         }
 
-function csvToArray(csv_url){
+function csvToArray(csv_url, table){
   var csvAray = []
   $.ajax({
     url:csv_url,
     dataType:"text",
+    async: false,
     success:function(data) {
       var csvData = data.split(/\r?\n|\r/)
       for(var i = 0; i < csvData.length; i++){
         let tempArray = csvData[i].split(",")
         csvAray.push(tempArray)
+
       }
-      //document.getElementById("txt").innerHTML = csvAray[0][0]
+      document.getElementById("txt").innerHTML = csvAray[0][0] //TESTING
+      table.push(data)
     }
   })
-  return csvAray
 }
-
 
 function arrayToDictionary(arr) {
   
