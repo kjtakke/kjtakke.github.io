@@ -1,1 +1,0 @@
-This folder contains the Aggregate Tables Add-in

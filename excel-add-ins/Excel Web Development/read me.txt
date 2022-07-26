@@ -1,1 +1,0 @@
-This Folder Contains the various scripts relevant to the Excel Web Development Add-in
